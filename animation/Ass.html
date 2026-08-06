@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 400px;
+            margin: auto;
+            border: 2px solid navy;
+        }
+        .square{
+            width: 0px;
+            height: 20px;
+            background: rgb(9, 90, 104);
+            position: relative;
+            
+            
+        }
+        @keyframes mymoves{
+        0% {width: 0px;}
+        25% {width: 50px;}
+        50% {width: 150px;}
+        75% {width: 310px;}
+        100% {width: 400px;}
+        }
+        .load{
+            width: 400px;
+            margin: auto;
+        }
+        #theme:checked~.con .square{
+            animation: mymoves 2s 1 forwards;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="theme" class="check">
+    <label for="theme">Start Loading</label>
+
+<div class="con">
+    <div class="square"></div>
+</div>
+<div class="load">Loading</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .image-box img {
+            width: 250px;
+            height: auto;
+            transition: box-shadow 0.3s ease;
+            
+        }
+
+
+        #effect1:checked~.image-box img {
+            box-shadow: 10px 10px 15px rgb(89, 0, 255);
+        }
+
+
+        #effect2:checked~.image-box img {
+            box-shadow: -10px -10px 15px rgb(6, 43, 207);
+        }
+
+        label {
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Box Shadow: Assignment</h2>
+
+
+    <input type="radio" name="shadow" id="effect1" >
+    <label for="effect1">Shadow Effect‑1</label>
+
+    <input type="radio" name="shadow" id="effect2">
+    <label for="effect2">Shadow Effect‑2</label><br><br>
+
+    <div class="image-box">
+        <img src="https://imgs.search.brave.com/AA544wdn-0rd9eVb-yfKcu13NtBthUbge24E3ixfIEo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM0/NjA0ODczMy9waG90/by90YWotbWFoYWwt/bWF1c29sZXVtLWlu/LWFncmEuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTl0YjlK/SmZfTmNJem1iMWFi/UVJxaHk2SDBma240/QTJXVlVGY0hxSlY3/LWc9"
+            alt="Flower">
+            
+    </div>
+</body>
+
+</html>

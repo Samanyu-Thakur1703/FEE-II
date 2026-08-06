@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .form{
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin:auto;
+            box-shadow: 10px 10px 15px #161515;
+        }
+        .name::before{
+            content : "*";
+            color : red;
+            font-weight: bold;
+        }
+        .email::before{
+            content : "*";
+            color : red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <label for="name" class="name">Name:</label><br>
+        <input type="text" name="name" placeholder="Username"><br><br>
+        <label for="email" class="email">Email:</label><br>
+        <input type="email" name="email" placeholder="Email"><br><br>
+        <label for="hobby" class="hobby">Hobby:</label><br>
+        <input type="hobby" name="hobby" placeholder="Hobby"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

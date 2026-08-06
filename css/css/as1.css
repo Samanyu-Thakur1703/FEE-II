@@ -1,0 +1,16 @@
+.taj-mahal-image:hover{
+    transform : scale(1.2);
+    transition : 0.5s;
+    
+}
+.container{
+    border : 15px solid red;
+    width : 600px;
+    height : 500px;
+    background-image: url(https://imgs.search.brave.com/AA544wdn-0rd9eVb-yfKcu13NtBthUbge24E3ixfIEo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM0/NjA0ODczMy9waG90/by90YWotbWFoYWwt/bWF1c29sZXVtLWlu/LWFncmEuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTl0YjlK/SmZfTmNJem1iMWFi/UVJxaHk2SDBma240/QTJXVlVGY0hxSlY3/LWc9);
+    /* background-size : cover; */
+    background-color : yellow;
+    background-repeat : no-repeat;
+    background-position : center; 
+    
+}

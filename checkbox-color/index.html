@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Color</title>
+    <style>
+    .box{
+            width:180px;
+            height:180px;
+            border:2px solid gray;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            cursor:pointer;
+            margin:20px;
+        }
+
+        .box p{
+            font-size:28px;
+            margin-top:10px;
+        }
+
+        #red,
+        #green{
+            display:none;
+        }
+
+
+
+        #red:checked + .red{
+            background:red;
+            color:white;
+        }
+
+        #red:checked + .red .check{
+            display:none;
+        }
+
+
+
+        #green:checked + .green{
+            background:green;
+            color:white;
+        }
+
+        #green:checked + .green .check{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <input type="checkbox" id="red">
+    <label for="red" class="box red">
+        <span class="check">
+            <input type="checkbox">
+        </span>
+        <p>Red</p>
+    </label>
+
+    <input type="checkbox" id="green">
+    <label for="green" class="box green">
+        <span class="check">
+            <input type="checkbox">
+        </span>
+        <p>Green</p>
+    </label>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChessBoard Assignment-1</title>
+
+<style>
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#f4f4f4;
+        font-family:Arial, sans-serif;
+    }
+    .board{
+        width:480px;
+        height:480px;
+        margin:auto;
+        display:grid;
+        grid-template-columns:repeat(8,1fr);
+        grid-template-rows:repeat(8,1fr);
+        border:3px solid black;
+        box-shadow:12px 12px 18px rgba(0,0,0,0.45);
+    }
+    .white{
+        background:white;
+    }
+    .black{
+        background:black;
+    }
+    .color:checked ~ .board .black {
+        background: maroon;
+    }
+    .color:checked ~ .board .white {
+        background: yellow;
+    }
+    .color{
+        accent-color: green;
+        font-size: large;
+    }
+    .color:checked ~ .board .white {
+        border-radius: 50%;
+        
+    }
+    .color:checked ~ .board{
+        background-color: blue;
+    }
+    .color:checked ~ .board .black {
+        border-radius: 50%;
+        
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <input type="checkbox" class="color" >Color Change
+    <div class="board">
+
+        <div class="white">
+        </div><div class="black"></div><div class="white"></div><div class="black"></div>
+        <div class="white"></div><div class="black"></div><div class="white"></div><div class="black"></div>
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+
+        
+        <div class="white"></div><div class="black"></div><div class="white"></div><div class="black"></div>
+        <div class="white"></div><div class="black"></div><div class="white"></div><div class="black"></div>
+
+        
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+
+        <div class="white"></div><div class="black"></div><div class="white"></div><div class="black"></div>
+        <div class="white"></div><div class="black"></div><div class="white"></div><div class="black"></div>
+
+
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+
+        <div class="white"></div><div class="black"></div><div class="white"></div><div class="black"></div>
+        <div class="white"></div><div class="black"></div><div class="white"></div><div class="black"></div>
+
+
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+        <div class="black"></div><div class="white"></div><div class="black"></div><div class="white"></div>
+    </div>
+</div>
+
+</body>
+</html>

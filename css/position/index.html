@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            width: 400px;
+            height: 400px;
+            background-image:url("https://imgs.search.brave.com/Dd3HgdRMvaizlW52DJ2SSp8zAd1UU3O__K_yjjO3Cxk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vTVBDMnMv/TUFFZVNDTVBDMnMv/MS90bC9jYW52YS1l/dXN0b21hLWZsb3dl/cnMtb24tcHVycGxl/LWJhY2tncm91bmQt/Y29weS1zcGFjZS1N/QUVlU0NNUEMycy5q/cGc");
+            background-size: cover;
+            background-position: center;
+            
+            
+        }
+        .bottom-left{
+            position: relative;
+            top: 380px; 
+            left: 6px;
+            color: black;
+        }
+        .top-left{
+            position: relative;
+            bottom: 10px; 
+            left: 6px;
+            color: black;
+        }
+        .top-right{
+            position: relative;
+            bottom: 25px; 
+            left: 320px;
+            color: black;
+        }
+        .bottom-right{
+            position: relative;
+            top: 320px; 
+            left: 310px;
+            color: black;
+        }
+        .centered{
+            position: relative;
+            top: 115px;
+            left: 169px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class="bottom-left">Bottom Left</div>
+        <div class="top-left">Top Left</div>
+        <div class="top-right">Top Right</div>
+        <div class="bottom-right">Bottom Right</div>
+        <div class="centered">Centered</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Layout Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Times New Roman, serif;
+}
+.container{
+    display:grid;
+    height:100vh;
+    grid-template-areas:
+    "header header header"
+    "menu search contact"
+    "menu chats messages"
+    "menu chats type"
+    "footer footer footer";
+}
+.header{
+    grid-area:header;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    border-bottom:3px solid black;
+}
+.menu{
+    grid-area:menu;
+    background:#565656ee;
+    color:rgb(0, 0, 0);
+    padding:0;
+    border-right:1px solid black;
+    text-align:center;
+}
+.search{
+    grid-area:search;
+    background:#2b2b2b;
+    padding:20px;
+    border-right:1px solid rgb(0, 0, 0);
+    color:rgb(170, 170, 170);
+}
+
+.contact{
+    grid-area:contact;
+    background:#2b2b2b;
+    padding:20px;
+    color:rgb(170, 170, 170);
+}
+.chats{
+    grid-area:chats;
+    padding:8px;
+    overflow-y:auto;
+    border-top:1px solid gray;
+    border-right:1px solid gray;
+    background:#2b2b2b;
+    color:rgb(170, 170, 170);
+}
+.messages{
+    grid-area:messages;
+    background-color:rgb(0, 0, 0);
+    padding:8px;
+    overflow-y:auto;
+    border-top:1px solid gray;
+    color:rgb(170, 170, 170);
+    text-align:center;
+}
+
+.type{
+    grid-area:type;
+    background:#000000;
+    padding:8px;
+    display:flex;
+    align-items:center;
+    border-top:1px solid gray;
+    color:rgb(170, 170, 170);
+}
+
+.footer{
+    grid-area:footer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:16px;
+    color:#555;
+}
+h3{
+    margin-bottom:15px;
+    font-weight:normal;
+}
+p{
+    margin-bottom:14px;
+    line-height:1.6;
+}
+
+
+
+.chats::-webkit-scrollbar,
+.messages::-webkit-scrollbar{
+
+    width:8px;
+}
+
+.chats::-webkit-scrollbar-thumb,
+.messages::-webkit-scrollbar-thumb{
+
+    background:#888;
+    border-radius:10px;
+}
+
+.chats::-webkit-scrollbar-thumb:hover,
+.messages::-webkit-scrollbar-thumb:hover{
+
+    background:#a50000;
+}
+</style>
+<body>
+
+<div class="container">
+
+
+    <aside class="menu">
+        <img src="Screenshot 2026-07-31 091958.png" width="70%" height="1000px" alt="Logo">
+    </aside>
+
+    <section class="search">
+        <img src="search.jpeg" width="100%" height="30" alt="Search">
+    </section>
+
+    <section class="contact">
+        Contact
+        <img src="image4.png" width="100%" height="10" alt="Contact">
+    </section>
+
+    <section class="chats">
+        <h3>Chats</h3>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, accusamus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, atque.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, laborum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, consectetur.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, aliquam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, nihil.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, laboriosam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, aliquid.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, consequatur.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dolorem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, fuga.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, sint.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, repellendus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, unde.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque.</p>
+    </section>
+
+    <section class="messages">
+        <h3>Messages</h3>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, dicta.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, beatae.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, quis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, minima.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, temporibus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, laboriosam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, laudantium.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nihil.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, provident.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, minus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, fuga.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, neque.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, provident.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, numquam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, magni.</p>
+    </section>
+
+    <section class="type">
+        Type
+    </section>
+
+
+</div>
+
+</body>
+</html>

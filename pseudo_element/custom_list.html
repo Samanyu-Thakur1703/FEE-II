@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol.custom-steps{
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        ol.custom-steps li{
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            min-height: 30px;
+            display: flex;
+            align-items: center;
+        }
+        ol.custom-steps li::before{
+            counter-increment: count;
+            content: counter(count);
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #3498db;
+            color: white;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <ol class="custom-steps">
+        <li> Gather materials</li>
+        <li> Prepare the workspace</li>
+        <li>Follow instructions</li>
+        <li> Complete the project</li>
+    </ol>
+</body>
+</html>
