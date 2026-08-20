@@ -17,15 +17,13 @@
       let outputDiv = document.querySelector(".numbertable");
       outputDiv.innerHTML = "";
 
-      if (!isNaN(n)) {
+      
         let result = "";
         for (let i = 1; i <= 10; i++) {
           result += `${n} × ${i} = ${n * i}<br>`;
         }
         outputDiv.innerHTML = result;
-      } else {
-        outputDiv.innerHTML = "Please enter a valid number.";
-      }
+      
     });
   </script>
 </body>
