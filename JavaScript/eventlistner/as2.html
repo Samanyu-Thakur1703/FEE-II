@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Table</title>
+</head>
+<body>
+  <input type="number" id="num" placeholder="Enter any number">
+  <button id="btn1">Display Number Table</button>
+  <br>
+  <div class="numbertable"></div>
+
+  <script>
+    document.getElementById("btn1").addEventListener("click", function() {
+      let n = parseInt(document.getElementById("num").value);
+      let outputDiv = document.querySelector(".numbertable");
+      outputDiv.innerHTML = "";
+
+      if (!isNaN(n)) {
+        let result = "";
+        for (let i = 1; i <= 10; i++) {
+          result += `${n} × ${i} = ${n * i}<br>`;
+        }
+        outputDiv.innerHTML = result;
+      } else {
+        outputDiv.innerHTML = "Please enter a valid number.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result" style="margin-bottom: 20px; font-weight: bold;"></div>
+
+    <form onsubmit="event.preventDefault(); displayMsg();">
+        <label for="username">Username</label>
+        <input type="text" id="username"><br><br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function displayMsg() {
+            let username = document.getElementById('username').value;
+            let pass = document.getElementById('password').value;
+            let result = document.getElementById('result');
+
+            if (username === "Alok" && pass === "1234") {
+                result.innerHTML = '<h1>Welcome Alok!</h1>';
+            } else {
+                result.innerHTML = '<h1>Invalid username and password!</h1>';
+            }
+        }
+    </script>
+</body>
+</html>
