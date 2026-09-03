@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Multiple DIVs</title>
+    <style>
+        #div1 {
+            border: 2px solid blue;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #div2 {
+            border: 2px solid red;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let div1 = document.createElement('div');
+        div1.id = 'div1';
+        let div1h2 = document.createElement('h2');
+        div1h2.id = 'div1h2';
+        div1h2.textContent = 'First DIV element';
+
+        let div2 = document.createElement('div');
+        div2.id = 'div2';
+        let div2h2 = document.createElement('h2');
+        div2h2.id = 'div2h2';
+        div2h2.textContent = 'Second DIV element';
+
+        div1.appendChild(div1h2);
+        div2.appendChild(div2h2);
+        document.body.appendChild(div1);
+        document.body.appendChild(div2);
+    </script>
+</body>
+
+</html>

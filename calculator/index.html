@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			background: #000;
+			color: #aaa;
+			font-family: Arial, sans-serif;
+		}
+
+		.calculator {
+			width: min(100%, 430px);
+			min-height: 100vh;
+			padding: 24px 16px 28px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			gap: 22px;
+		}
+
+		.display {
+			min-height: 140px;
+			padding: 16px 8px;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-end;
+			overflow: hidden;
+			color: #eee;
+			font-size: clamp(3.5rem, 15vw, 5.5rem);
+			font-weight: 300;
+			white-space: nowrap;
+		}
+
+		.keys {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: clamp(10px, 3vw, 18px);
+		}
+
+		button {
+			aspect-ratio: 1;
+			border: 0;
+			border-radius: 50%;
+			background: #252525;
+			color: #aaa;
+			cursor: pointer;
+			font: inherit;
+			font-size: clamp(1.8rem, 8vw, 3rem);
+			transition: transform 0.1s, filter 0.1s;
+		}
+
+		button:active {
+			transform: scale(0.94);
+			filter: brightness(1.35);
+		}
+
+		.function {
+			color: #f26363;
+		}
+
+		.operator {
+			background: #351112;
+			color: #f26363;
+		}
+
+		.equals {
+			background: #f26363;
+			color: #fff;
+		}
+
+		@media (max-height: 700px) {
+			.calculator {
+				gap: 10px;
+				padding-top: 10px;
+				padding-bottom: 12px;
+			}
+
+			.display {
+				min-height: 90px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main class="calculator">
+		<output class="display" id="display">0</output>
+		<section class="keys">
+			<button class="function" data-action="clear">AC</button>
+			<button class="function" data-action="delete">(x)</button>
+			<button class="function" data-action="sign">+/-</button>
+			<button class="operator" data-operation="÷">÷</button>
+			<button data-number="7">7</button>
+			<button data-number="8">8</button>
+			<button data-number="9">9</button>
+			<button class="operator" data-operation="×">×</button>
+			<button data-number="4">4</button>
+			<button data-number="5">5</button>
+			<button data-number="6">6</button>
+			<button class="operator" data-operation="−">−</button>
+			<button data-number="1">1</button>
+			<button data-number="2">2</button>
+			<button data-number="3">3</button>
+			<button class="operator" data-operation="+">+</button>
+			<button class="function" data-action="percent">%</button>
+			<button data-number="0">0</button>
+			<button data-action="decimal">.</button>
+			<button class="equals" data-action="equals">=</button>
+		</section>
+	</main>
+
+	<script>
+		const display = document.querySelector('#display');
+		const buttons = document.querySelectorAll('button');
+		let firstNumber = '';
+		let secondNumber = '';
+		let operator = '';
+		let showingAnswer = false;
+
+		function show(value) {
+			display.textContent = value || '0';
+		}
+
+		function addNumber(number) {
+			if (showingAnswer) {
+				firstNumber = '';
+				secondNumber = '';
+				operator = '';
+				showingAnswer = false;
+			}
+
+			if (operator === '') firstNumber += number;
+			else secondNumber += number;
+
+			show(operator === '' ? firstNumber : secondNumber);
+		}
+
+		function addDecimal() {
+			const number = operator === '' ? firstNumber : secondNumber;
+			if (number.includes('.')) return;
+			addNumber(number === '' ? '0.' : '.');
+		}
+
+		function chooseOperator(value) {
+			if (firstNumber === '') firstNumber = '0';
+			operator = value;
+			show('0');
+		}
+
+		function calculate() {
+			const symbols = { '×': '*', '÷': '/', '−': '-' };
+			const expression = firstNumber + (symbols[operator] || operator) + secondNumber;
+			let answer = eval(expression);
+			if (!Number.isFinite(answer)) answer = 'Error';
+
+			firstNumber = String(answer);
+			secondNumber = '';
+			operator = '';
+			showingAnswer = true;
+			show(answer);
+		}
+
+		function useAction(action) {
+			if (action === 'clear') {
+				firstNumber = '';
+				secondNumber = '';
+				operator = '';
+				showingAnswer = false;
+				show('0');
+			}
+			if (action === 'delete') {
+				if (operator === '') firstNumber = firstNumber.slice(0, -1);
+				else secondNumber = secondNumber.slice(0, -1);
+				show(operator === '' ? firstNumber : secondNumber);
+			}
+			if (action === 'sign') {
+				if (operator === '') firstNumber = String(Number(firstNumber) * -1);
+				else secondNumber = String(Number(secondNumber) * -1);
+				show(operator === '' ? firstNumber : secondNumber);
+			}
+			if (action === 'percent') {
+				if (operator === '') firstNumber = String(Number(firstNumber) / 100);
+				else secondNumber = String(Number(secondNumber) / 100);
+				show(operator === '' ? firstNumber : secondNumber);
+			}
+			if (action === 'equals') calculate();
+		}
+
+		buttons.forEach(button => {
+			button.addEventListener('click', () => {
+				if (button.dataset.number) addNumber(button.dataset.number);
+				if (button.dataset.operation) chooseOperator(button.dataset.operation);
+				if (button.dataset.action === 'decimal') addDecimal();
+				if (button.dataset.action && button.dataset.action !== 'decimal') useAction(button.dataset.action);
+			});
+		});
+	</script>
+</body>
+</html>

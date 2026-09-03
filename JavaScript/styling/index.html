@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Click to get free pizza</h2>
+    <button id = "btn1" onmouseover="hide1()">Free Pizza</button>
+    <button id = "btn2" onmouseover="hide2()">Free Pizza</button>
+    <script>
+        document.getElementById("btn2").style.visibility = "hidden";
+        function hide1(){
+            document.getElementById("btn1").style.visibility = "hidden";
+            document.getElementById("btn2").style.visibility = "visible";
+        }
+        function hide(){
+            document.getElementById("btn1").style.visibility = "visible";
+            document.getElementById("btn2").style.visibility = "hidden";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Styling</title>
+    <script>
+        function fillcolor() {
+            let tab = document.getElementById("mytab");
+            let headingRow = tab.rows[0]; 
+            
+            
+            if (document.getElementById("bgcolor1").checked)
+                tab.style.backgroundColor = "yellow";
+            else if (document.getElementById("bgcolor2").checked)
+                tab.style.backgroundColor = "grey";
+            else if (document.getElementById("bgcolor3").checked)
+                tab.style.backgroundColor = "green";
+            else if (document.getElementById("bgcolor4").checked)
+                tab.style.backgroundColor = "cyan";
+
+            if (document.getElementById("bgcolor11").checked)
+                headingRow.style.backgroundColor = "yellow";
+            else if (document.getElementById("bgcolor12").checked)
+                headingRow.style.backgroundColor = "grey";
+            else if (document.getElementById("bgcolor13").checked)
+                headingRow.style.backgroundColor = "green";
+            else if (document.getElementById("bgcolor14").checked)
+                headingRow.style.backgroundColor = "cyan";
+
+            if (document.getElementById("bgcolor21").checked)
+                tab.style.color = "yellow";
+            else if (document.getElementById("bgcolor22").checked)
+                tab.style.color = "grey";
+            else if (document.getElementById("bgcolor23").checked)
+                tab.style.color = "green";
+            else if (document.getElementById("bgcolor24").checked)
+                tab.style.color = "cyan";
+
+            
+            let shadowCheck = document.getElementById("shadow");
+            if (shadowCheck.checked)
+                tab.style.boxShadow = "10px 10px 15px rgba(0,0,0,0.5)";
+            else
+                tab.style.boxShadow = "none";
+        }
+    </script>
+</head>
+<body>
+    <h2>Table</h2>
+
+    <table id="mytab" border="1" width="50%">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Ram</td>
+            <td>ram123@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Shruti</td>
+            <td>shruti321@gmail.com</td>
+        </tr>
+    </table>
+
+    <br><b>Select Background Color for Table:</b><br>
+    <input type="radio" id="bgcolor1" name="bgcolor" onclick="fillcolor()">Yellow
+    <input type="radio" id="bgcolor2" name="bgcolor" onclick="fillcolor()">Grey
+    <input type="radio" id="bgcolor3" name="bgcolor" onclick="fillcolor()">Green
+    <input type="radio" id="bgcolor4" name="bgcolor" onclick="fillcolor()">Cyan
+    <br>
+
+    <br><b>Select Background Color for Heading Row:</b><br>
+    <input type="radio" id="bgcolor11" name="bgcolorH" onclick="fillcolor()">Yellow
+    <input type="radio" id="bgcolor12" name="bgcolorH" onclick="fillcolor()">Grey
+    <input type="radio" id="bgcolor13" name="bgcolorH" onclick="fillcolor()">Green
+    <input type="radio" id="bgcolor14" name="bgcolorH" onclick="fillcolor()">Cyan
+    <br>
+
+    <br><b>Select Color for Table Text:</b><br>
+    <input type="radio" id="bgcolor21" name="bgcolorT" onclick="fillcolor()">Yellow
+    <input type="radio" id="bgcolor22" name="bgcolorT" onclick="fillcolor()">Grey
+    <input type="radio" id="bgcolor23" name="bgcolorT" onclick="fillcolor()">Green
+    <input type="radio" id="bgcolor24" name="bgcolorT" onclick="fillcolor()">Cyan
+    <br>
+
+    <br><b>Apply Shadow to the Table:</b>
+    <input type="checkbox" id="shadow" onclick="fillcolor()">
+</body>
+</html>

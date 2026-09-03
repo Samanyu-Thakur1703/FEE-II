@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Solution</title>
+    <style>
+        #content {
+            border: 3px solid blue;
+            text-align: center;
+            text-decoration: underline;
+            width: 400px;
+            color: orange;
+            background-color: aqua;
+        }
+
+        .marq {
+            display: inline-flex;
+            background-color: gray;
+            border: 1px solid blue;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let div = document.createElement('div');
+        div.id = 'content';
+
+        let h2 = document.createElement('h2');
+        let h2Text = document.createTextNode('Created through JavaScript');
+
+        let marq = document.createElement('marquee');
+        marq.className = 'marq';
+        let marqText = document.createTextNode('Runnnig Text');
+
+        h2.appendChild(h2Text);
+        div.appendChild(h2);
+        marq.appendChild(marqText);
+        div.appendChild(marq);
+        document.body.appendChild(div);
+    </script>
+</body>
+
+</html>
