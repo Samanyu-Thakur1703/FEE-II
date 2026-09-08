@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Select multiple images to upload</h2>
+    <input type="file" id="myFile" name="filename" multiple><br><br>
+    <button id = "btn1">Show button</button>
+    <br>
+    <div id = "imageContainer"></div>
+    <script>
+        const input = document.getElementById('myFile');
+        input.addEventListener("change", function(){
+            for(let i = 0 ; i < input.files.length ; i++){
+                const file = input.files[i];
+                console.log(file.name);
+                console.log(file.size);
+                console.log(file.type);
+            }
+        })
+        </script>
+        </body>
+</html>

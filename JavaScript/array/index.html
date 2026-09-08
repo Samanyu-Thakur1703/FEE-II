@@ -1,0 +1,53 @@
+<!-- all array methods in js -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        // Array methods in JavaScript
+
+        // 1. push() - adds one or more elements to the end of an array
+        let fruits = ['apple', 'banana'];
+        fruits.push('orange');
+        console.log(fruits); // ['apple', 'banana', 'orange']
+
+        // 2. pop() - removes the last element from an array
+        fruits.pop();
+        console.log(fruits); // ['apple', 'banana']
+
+        // 3. shift() - removes the first element from an array
+        fruits.shift();
+        console.log(fruits); // ['banana']
+
+        // 4. unshift() - adds one or more elements to the beginning of an array
+        fruits.unshift('kiwi');
+        console.log(fruits); // ['kiwi', 'banana']
+
+        // 5. splice() - adds/removes elements from an array
+        fruits.splice(1, 0, 'mango'); // adds 'mango' at index 1
+        console.log(fruits); // ['kiwi', 'mango', 'banana']
+
+        fruits.splice(1, 1); // removes 1 element at index 1
+        console.log(fruits); // ['kiwi', 'banana']
+
+        // 6. slice() - returns a shallow copy of a portion of an array
+        let newFruits = fruits.slice(0, 1);
+        console.log(newFruits); // ['kiwi']
+
+        // 7. concat() - merges two or more arrays
+        let vegetables = ['carrot', 'broccoli'];
+        let food = fruits.concat(vegetables);
+        console.log(food); // ['kiwi', 'banana', 'carrot', 'broccoli']
+
+        // 8. indexOf() - returns the first index of a specified value
+        console.log(fruits.indexOf('banana')); // 1
+
+        // 9. includes() - checks if an array contains a specified value
+        console.log(fruits.includes('kiwi')); // true   
+        </script>
+ </body>
+ </html>
